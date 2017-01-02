@@ -52,7 +52,8 @@ const App = ({...props}) => {
     const height = window.innerHeight - 140;
     return (
         <div>
-            <div>
+            <div id="header-container">
+                <a className="link" href="https://www.npmjs.com/package/react-infini-grid">Source</a>
                 <h3>Item count:</h3>
                 <input type="text" value={props.count} onChange={(e) => {
                     props.setItemCount(e.target.value);
@@ -72,9 +73,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setItemCount: (count) => {
-           dispatch({type: 'SET_ITEM_COUNT', payload: parseInt(count) >= 0 ? count : 0})
+            dispatch({type: 'SET_ITEM_COUNT', payload: parseInt(count) >= 0 ? count : 0})
         }
-
     }
 };
 
