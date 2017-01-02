@@ -1,0 +1,84 @@
+.select-react-redux-container .item{
+    padding: 6px 6px 6px 14px;
+    cursor: pointer;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+.select-react-redux-container .item:hover, .select-react-redux-container .item-selected{
+    background-color: rgb(88, 151, 251);
+}
+
+.select-react-redux-container .item-highlighted{
+    background-color: rgb(88, 151, 251);
+}
+
+.select-react-redux-container .item-no-results{
+
+}
+
+.select-react-redux-container .item-no-results:hover{
+    cursor: inherit;
+    background-color: white;
+}
+
+.select-react-redux-container{
+    position: relative;
+}
+
+.select-react-redux-container .selected{
+    border-radius: 6px;
+    border: 1px rgb(170, 170, 170) solid;
+    width: 100%;
+    cursor: pointer;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: white;
+    display: block;
+}
+
+.select-react-redux-container a.selected{
+   color:black;
+    text-decoration: none;
+}
+
+.select-react-redux-container .selected-open{
+    border-radius: 6px 6px 0 0;
+}
+
+.select-react-redux-container  .top-bar{
+    padding: 5px 7px;
+}
+
+.select-react-redux-container .top-bar-empty{
+    color: #AAAAAA;
+}
+
+.select-react-redux-container input{
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+.select-react-redux-container .results-container{
+    display: none;
+    border-radius: 0 0 6px 6px;
+    border-bottom: 1px rgb(170, 170, 170) solid;
+    border-left: 1px rgb(170, 170, 170) solid;
+    border-right: 1px rgb(170, 170, 170) solid;
+    font-size: 15px;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    z-index: 9999;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.select-react-redux-container .results-container.open {
+    display: block;
+}
+
+.select-react-redux-container .input-container {
+    padding: 5px 7px;
+}
