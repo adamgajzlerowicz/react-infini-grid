@@ -1,4 +1,4 @@
-## ReactSelect
+## ReactGrid
 
 A searchable select box, similar to select2.
 
