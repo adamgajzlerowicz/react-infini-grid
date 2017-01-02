@@ -9,7 +9,7 @@ The grid will allow you expect you to implement on your own the internals of the
 
 install:
 ```
-npm install --save react-grid
+npm install --save react-infini-grid
 ```
 
 usage: 

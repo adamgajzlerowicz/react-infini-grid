@@ -1,7 +1,7 @@
 {
   "name": "react-infini-grid",
   "version": "0.1.2",
-  "description": "A searchable select box, similar to select2.",
+  "description": "React base Grid component, adding to DOM items only that are in a viewport",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.dev.config.js",
     "build:example": "rimraf example/lib && NODE_ENV=production webpack --config webpack.example.config.js",
