@@ -23,9 +23,7 @@ import {Grid} from 'react-infini-grid';
 
 const Item = ({id}) => {
     return (
-        <div style={containerStyle}>
-            <div style={itemStyle}>Item : {id +1}</div>
-        </div>
+        <div>Item : {id}</div>
     )
 };
 
