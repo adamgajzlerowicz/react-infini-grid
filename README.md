@@ -1,36 +1,28 @@
 ## ReactGrid
 
-A searchable select box, similar to select2.
+A fast grid, that shows only items that are in current Viewport, allowing to add thousands of items to the page and it will render in a blink of a eye!
 
-What is different about this plugin? It doesn't build an underlying select item, but acts like it. 
-Behaviour and select action is to be passed as a prop, allowing full compatibility with redux.
 
-[demo](https://adamgajzlerowicz.github.io/ReactSelect/)
+[demo](https://adamgajzlerowicz.github.io/ReactGrid)
 
 install:
 ```
-npm install --save select-react-redux
+npm install --save react-grid
 ```
 
 usage: 
 ```
 import React from 'react';
 import {render} from 'react-dom';
-import Select from 'select-react-redux';
+import {Grid} from 'react-grid';
 
-const items = {
-    'item1': 'Mercedes Benz C40',
-    'item2': 'Mazda 6',
-};
-
-const onChange = (val) => {
-    console.log(val);
-};
+const items = [];
+for (let i = 0; i <= 500; i++) {
+    items.push(<Item id={i}/>);
+}
 
 render((
-    <div>
-        <Select items={items} onChange={onChange}/>
-    </div>
+    <Grid items={items} height={500} itemHeight={250} itemWidth={250}/>
 ), document.getElementById('app'));
 ```
 
