@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Grid} from '../src/Grid';
+import {Grid} from '../../src/Grid';
 import {createStore} from 'redux';
 import {connect} from 'react-redux';
 import {Provider} from 'react-redux';
