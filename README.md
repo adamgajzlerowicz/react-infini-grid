@@ -14,7 +14,7 @@ usage:
 ```
 import React from 'react';
 import {render} from 'react-dom';
-import {Grid} from 'react-grid';
+import {Grid} from 'react-infini-grid';
 
 const items = [];
 for (let i = 0; i <= 500; i++) {
