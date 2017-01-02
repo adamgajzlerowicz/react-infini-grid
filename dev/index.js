@@ -20,7 +20,7 @@ const containerStyle = {
     margin: 10
 };
 
-const reducer = (state = {count: 5}, action) => {
+const reducer = (state = {count: 100000}, action) => {
     switch (action.type) {
         case 'SET_ITEM_COUNT':
             return {

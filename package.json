@@ -1,26 +1,27 @@
 {
-  "name": "select-react-redux",
-  "version": "1.7.1",
+  "name": "react-grid",
+  "version": "1",
   "description": "A searchable select box, similar to select2.",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.dev.config.js",
     "build:example": "rimraf example/lib && NODE_ENV=production webpack --config webpack.example.config.js",
-    "build:watch": "rimraf example/lib && NODE_ENV=production webpack --config webpack.example.config.js --watch",
+    "build:example:watch": "rimraf example/lib && NODE_ENV=production webpack --config webpack.example.config.js --watch",
     "build:prod": "rimraf lib && babel src/ -d lib/",
-    "pnp": "npm run build:prod && npm run build:example && git add -A && git commit -m \"push\" && git push  && npm version patch  && npm publish",
-    "cover": "istanbul cover _mocha -- test --compilers js:babel-register"
+    "pnp": "npm run build:prod && npm run build:example && git add -A && git commit -m \"push\" && git push  && npm version patch  && npm publish"
   },
-  "main": "lib/index.js",
+  "main": "lib/Grid.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamgajzlerowicz/ReactSelect.git"
+    "url": "https://github.com/adamgajzlerowicz/ReactGrid.git"
   },
-  "homepage": "https://adamgajzlerowicz.github.io/ReactSelect",
+  "homepage": "https://adamgajzlerowicz.github.io/ReactGrid",
   "keywords": [
-    "select",
+    "infinity",
     "react",
     "redux",
-    "select2"
+    "grid",
+    "ininity-grid",
+    "fast scroll"
   ],
   "author": "Adam Gajzlerowicz",
   "license": "ISC",
