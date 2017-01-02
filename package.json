@@ -1,7 +1,7 @@
 {
   "name": "react-infini-grid",
   "version": "0.1.3",
-  "description": "React base Grid component, adding to DOM items only that are in a viewport",
+  "description": "React base Grid component, adding to the DOM only elements that are in viewport",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.dev.config.js",
     "build:example": "rimraf example/lib && NODE_ENV=production webpack --config webpack.example.config.js",
