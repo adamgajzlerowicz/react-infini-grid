@@ -36,7 +36,6 @@ let store = createStore(reducer);
 window.store = store;
 
 const Item = ({id}) => {
-
     return (
         <div style={containerStyle}>
             <div style={itemStyle}>Item : {id +1}</div>
