@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Grid} from '../../src/Grid';
+import {Grid} from '../src/Grid';
 import {createStore} from 'redux';
 import {connect} from 'react-redux';
 import {Provider} from 'react-redux';
@@ -36,6 +36,7 @@ let store = createStore(reducer);
 window.store = store;
 
 const Item = ({id}) => {
+
     return (
         <div style={containerStyle}>
             <div style={itemStyle}>Item : {id +1}</div>
@@ -51,7 +52,8 @@ const App = ({...props}) => {
     const height = window.innerHeight - 140;
     return (
         <div>
-            <div>
+            <div id="header-container">
+                <a className="link" href="https://www.npmjs.com/package/react-infini-grid">Source</a>
                 <h3>Item count:</h3>
                 <input type="text" value={props.count} onChange={(e) => {
                     props.setItemCount(e.target.value);
@@ -73,7 +75,6 @@ const mapDispatchToProps = (dispatch) => {
         setItemCount: (count) => {
             dispatch({type: 'SET_ITEM_COUNT', payload: parseInt(count) >= 0 ? count : 0})
         }
-
     }
 };
 
