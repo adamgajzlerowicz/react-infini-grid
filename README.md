@@ -16,6 +16,7 @@ install:
 npm install --save react-infini-grid
 ```
 
+
 usage: 
 ```
 import React from 'react';
