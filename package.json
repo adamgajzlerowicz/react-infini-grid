@@ -1,6 +1,6 @@
 {
   "name": "react-grid",
-  "version": "1",
+  "version": "0.0.1",
   "description": "A searchable select box, similar to select2.",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.dev.config.js",
