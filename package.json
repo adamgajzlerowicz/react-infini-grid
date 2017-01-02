@@ -4,7 +4,6 @@
   "description": "A searchable select box, similar to select2.",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.dev.config.js",
-    "test": "NODE_ENV=test mocha --require test/helpers/browser.js --recursive test/**/*.spec.js --compilers js:babel-core/register  --require ignore-styles -w",
     "build:example": "rimraf example/lib && NODE_ENV=production webpack --config webpack.example.config.js",
     "build:watch": "rimraf example/lib && NODE_ENV=production webpack --config webpack.example.config.js --watch",
     "build:prod": "rimraf lib && babel src/ -d lib/",

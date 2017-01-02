@@ -1,54 +1,78 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Select} from '../src';
-import {createStore, applyMiddleware} from 'redux';
+import {Grid} from '../src/Grid';
+import {createStore} from 'redux';
 import {connect} from 'react-redux';
 import {Provider} from 'react-redux';
 
-
-const items = {
-    'item1': 'Mercedes-benz GLE',
-    'item2': 'Mazda 6',
-    'item3': 'Mazda 3',
-    'item4': 'Rover Discovery Sport'
+const itemStyle = {
+    color: '#FFF9E5',
+    textAlign: 'center'
 };
 
+const containerStyle = {
+    display: 'flex',
+    backgroundColor: '#232320',
+    height: 240,
+    flexDirection: 'column',
+    textAlign: 'center',
+    justifyContent: 'center',
+    margin: 10
+};
 
-
-const reducer = (state = {item: ''}, action) => {
-    let newVar = {
-        ...state,
-        item: action.payload
-    };
-    console.log(newVar);
-    return newVar;
+const reducer = (state = {count: 5}, action) => {
+    switch (action.type) {
+        case 'SET_ITEM_COUNT':
+            return {
+                ...state,
+                count: action.payload < 0 ? 0: action.payload
+            };
+        default:
+            return state;
+    }
 };
 
 let store = createStore(reducer);
-window.store2 = store;
+window.store = store;
+
+const Item = ({id}) => {
+
+    return (
+        <div style={containerStyle}>
+            <div style={itemStyle}>Item : {id +1}</div>
+        </div>
+    )
+};
 
 const App = ({...props}) => {
-    console.log(props);
-    const onChange = (val) => {
-        props.foo(val);
-    };
+    const items = [];
+    for (let i = 0; i <= props.count - 1; i++) {
+        items.push(<Item id={i}/>);
+    }
+    const height = window.innerHeight - 140;
     return (
         <div>
-            <Select items={items} onChange={onChange} tabIndex="2" selected={props.selected}/>
+            <div>
+                <h3>Item count:</h3>
+                <input type="text" value={props.count} onChange={(e) => {
+                    props.setItemCount(e.target.value);
+                }}/>
+            </div>
+            <Grid items={items} height={height} itemHeight={250} itemWidth={250}/>
         </div>
     )
 };
 
 const mapStateToProps = state => {
     return {
-        selected: state.selected,
+        count: state.count,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        foo: (item)=> {
-            dispatch({type: 'kjhsdfkjhgsdfkjh', payload: item})
+        setItemCount: (count) => {
+           dispatch({type: 'SET_ITEM_COUNT', payload: parseInt(count) >= 0 ? count : 0})
         }
 
     }
@@ -61,7 +85,7 @@ export const ConnectedApp = connect(
 render((
     <div>
         <Provider store={store}>
-            <Grid items={items} height={height} itemHeight={250} itemWidth={250}/>
+            <ConnectedApp />
         </Provider>
 
     </div>
