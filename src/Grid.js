@@ -63,6 +63,7 @@ export class Grid extends React.Component {
         let itemsInRow = Math.floor(containerWidth / this.props.itemWidth);
 
         let containerHeight = this.gridContainer.offsetHeight;
+
         let itemsInCol = Math.floor(containerHeight / this.props.itemHeight);
 
         let totalContainerHeight = this.props.items.length / itemsInRow * this.props.itemHeight;
@@ -75,7 +76,7 @@ export class Grid extends React.Component {
         if (heightOfAfter < 0) heightOfAfter = 0;
 
         this.setState({
-            visibleItems: this.props.items.slice(rowsOffset * itemsInRow, (itemsInCol + 2 + rowsOffset) * itemsInRow),
+            visibleItems: this.props.items.slice(rowsOffset * itemsInRow, (itemsInCol + 3 + rowsOffset) * itemsInRow),
             heightOfAfter: heightOfAfter,
             heightOfBefore: rowsOffset * this.props.itemHeight
         })
@@ -84,6 +85,11 @@ export class Grid extends React.Component {
     componentDidMount() {
         this.buildGrid();
         this.gridContainer.addEventListener('scroll', this.buildGrid);
+        var that = this;
+        window.addEventListener("resize", function(){
+            that.buildGrid();
+        }, true);
+
     }
 
     componentWillReceiveProps(nextProps) {
