@@ -1,8 +1,10 @@
 ## ReactGrid
 
-A fast grid, that shows only items that are in current Viewport, allowing to add thousands of items to the page and it will render in a blink of a eye!
+A grid component, that help's DOM's performance. It shows only items that are in current Viewport, allowing to add thousands of items to the page and it will still render in a blink of a eye!
 
+What is different about this plugin? It works well with Redux. An example implementation of his can be found in the example folder.
 
+You can see how the grid looks here: 
 [demo](https://adamgajzlerowicz.github.io/ReactGrid)
 
 The grid will allow you expect you to implement on your own the internals of the shown tailes. After you specify their target size, you need to make sure that they retain it.  
@@ -11,6 +13,7 @@ install:
 ```
 npm install --save react-infini-grid
 ```
+
 
 usage: 
 ```
