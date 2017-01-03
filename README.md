@@ -1,7 +1,6 @@
 ## ReactGrid
 
-A grid component, that help's DOM's performance. It shows only items that are in current Viewport, allowing to add thousands of items to the page and it will still render in a blink of a eye!
-
+A grid component with speedy DOM performance. Only items that are visible in the Viewport are rendered to DOM, so that thousands of items can be manipulated in the blink of a eye!
 What is different about this plugin? It works well with Redux. An example implementation of his can be found in the example folder.
 
 You can see how the grid looks here: 
