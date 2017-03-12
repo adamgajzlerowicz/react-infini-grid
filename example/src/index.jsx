@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Grid} from '../../src/Grid';
+import {Grid} from '../../lib/Grid';
 import {createStore} from 'redux';
 import {connect} from 'react-redux';
 import {Provider} from 'react-redux';
@@ -36,7 +36,6 @@ let store = createStore(reducer);
 window.store = store;
 
 const Item = ({id}) => {
-
     return (
         <div style={containerStyle}>
             <div style={itemStyle}>Item : {id +1}</div>
