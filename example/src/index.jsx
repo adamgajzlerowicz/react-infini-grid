@@ -86,7 +86,6 @@ render((
         <Provider store={store}>
             <ConnectedApp />
         </Provider>
-
     </div>
 ), document.getElementById('app'));
 

@@ -25,7 +25,7 @@ const reducer = (state = {count: 100000}, action) => {
         case 'SET_ITEM_COUNT':
             return {
                 ...state,
-                count: action.payload < 0 ? 0: action.payload
+                count: action.payload < 0 ? 0 : action.payload
             };
         default:
             return state;
@@ -36,10 +36,9 @@ let store = createStore(reducer);
 window.store = store;
 
 const Item = ({id}) => {
-
     return (
         <div style={containerStyle}>
-            <div style={itemStyle}>Item : {id +1}</div>
+            <div style={itemStyle}>Item : {id + 1}</div>
         </div>
     )
 };
@@ -87,7 +86,6 @@ render((
         <Provider store={store}>
             <ConnectedApp />
         </Provider>
-
     </div>
 ), document.getElementById('app'));
 
