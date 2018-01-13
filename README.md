@@ -39,10 +39,10 @@ render((
 
 ### Api
 
-| prop       |
-| ---------- |
+| prop       | description                                      |
+| ---------- | ------------------------------------------------ |
 | items      | jsx components that will be rendered in the grid |
-| height     | Height of the grid |
-| width?     | Width of the grid. This param is optional |
-| itemHeight | Declared height of a tile |
-| itemWidth  | Declared width of a tile |
+| height     | Height of the grid                               |
+| width?     | Width of the grid. This param is optional        |
+| itemHeight | Declared height of a tile                        |
+| itemWidth  | Declared width of a tile                         |
