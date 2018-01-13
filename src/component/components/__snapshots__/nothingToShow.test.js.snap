@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NothingToShow matches the snapshot 1`] = `
+<div
+  className="nothing-to-see"
+  style={
+    Object {
+      "display": "flex",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "space-around",
+      "textAlign": "center",
+    }
+  }
+>
+  There is nothing to see here
+</div>
+`;

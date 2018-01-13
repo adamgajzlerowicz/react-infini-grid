@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item matches the snapshot 1`] = `
+<div
+  className="item-outer"
+>
+  <div
+    className="item-inner"
+  >
+    Item : 
+    14
+  </div>
+</div>
+`;
