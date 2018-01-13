@@ -18,7 +18,7 @@ This plugin also knows how to re-render when:
 yarn add react-infini-grid
 ```
 
-### Working plug and play usage:
+### Working plug and play usage example:
 
 ```
 import React, { Component } from 'react';
