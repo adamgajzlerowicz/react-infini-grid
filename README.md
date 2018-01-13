@@ -7,13 +7,13 @@ You can see how the grid looks here:
 
 Implemented tiles should have fixed size, which as total with margin and padding, will be specified in as Grid props.
 
-### install:
+### Install:
 
 ```
 yarn add react-infini-grid
 ```
 
-### usage:
+### Usage:
 
 ```
 import React from 'react';
@@ -37,7 +37,7 @@ render((
 ), document.getElementById('app'));
 ```
 
-### api
+### Api
 
 | prop       |
 | ---------- |
