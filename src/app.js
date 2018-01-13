@@ -40,10 +40,12 @@ class App extends React.Component<{}, AppStateType> {
                 scales! Usage:
               </p>
               <pre style={{ backgroundColor: '#eff0f1' }}>
-                {`yarn add react-infini-grid`}
+                {'yarn add react-infini-grid'}
               </pre>
               <pre style={{ backgroundColor: '#eff0f1' }}>
-                {`<Grid itemHeight={250} itemWidth={250} items={items} height={height} />`}
+                {
+                  '<Grid itemHeight={250} itemWidth={250} items={items} height={height} />'
+                }
               </pre>
             </div>
             <div className="buttons">
