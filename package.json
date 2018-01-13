@@ -1,8 +1,7 @@
 {
   "name": "react-infini-grid",
-  "version": "2.0.8",
-  "description":
-    "React base Grid component, adding to the DOM only elements that are in viewport",
+  "version": "2.0.9",
+  "description": "React base Grid component, adding to the DOM only elements that are in viewport",
   "private": false,
   "main": "index.js",
   "scripts": {
@@ -13,15 +12,12 @@
     "flow-typed": "flow-typed",
     "predeploy": "yarn run build:pages",
     "deploy": "gh-pages -d build",
-    "build":
-      "yarn build:clean && yarn build:lib && yarn build:flow && yarn build:version",
+    "build": "yarn build:clean && yarn build:lib && yarn build:flow && yarn build:version",
     "build:clean": "rimraf lib",
-    "build:lib":
-      "BABEL_ENV=production babel -d lib src/component --ignore '**/*.test.js'",
+    "build:lib": "BABEL_ENV=production babel -d lib src/component --ignore '**/*.test.js'",
     "build:flow": "flow-copy-source -v -i '**/*.test.js' src/component lib",
     "build:version": "npm version patch; cp package.json lib",
-    "pretty":
-      "prettier --single-quote --trailing-comma es5 --write '{src,__{tests,mocks}__}/**/*.js'"
+    "pretty": "prettier --single-quote --trailing-comma es5 --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "keywords": [
     "infinity",
@@ -75,7 +71,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/jsdom.js"
@@ -89,10 +87,11 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
-        "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
@@ -107,17 +106,24 @@
     ]
   },
   "babel": {
-    "presets": ["react-app"],
+    "presets": [
+      "react-app"
+    ],
     "env": {
       "production": {
-        "presets": ["minify"]
+        "presets": [
+          "minify"
+        ]
       }
     }
   },
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
-      "quotes": ["error", "single"]
+      "quotes": [
+        "error",
+        "single"
+      ]
     }
   },
   "devDependencies": {
