@@ -17,18 +17,17 @@ yarn add react-infini-grid
 
 ```
 import React from 'react';
-import {render} from 'react-dom';
-import {Grid} from 'react-infini-grid';
+import { render } from 'react-dom';
+import { Grid } from 'react-infini-grid';
 
-const Item = ({id}) => {
+const Item = ({ id }) => {
     return (
-        <div style={itemStyle}>Item : {id +1}</div>
+        <div>Item : {id + 1}</div>
     )
 };
 
-// generate grid items
 const items = [];
-for (let i = 0; i <= 500; i++) {
+for (let i = 0; i <= 1000; i++) {
     items.push(<Item id={i}/>);
 }
 
