@@ -1,4 +1,4 @@
-// @flow 
+// @flow
 
 import React from 'react';
 
@@ -9,14 +9,9 @@ interface ItemPropsType {
 const Item = ({ id }: ItemPropsType) => {
   return (
     <div className="item-outer">
-      <div className="item-inner">
-        Item : {id + 1}
-      </div>
+      <div className="item-inner">Item : {id + 1}</div>
     </div>
   );
 };
 
-
-export {
-  Item, Item as default,
-};
+export { Item, Item as default };

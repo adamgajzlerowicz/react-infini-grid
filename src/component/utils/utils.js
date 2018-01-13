@@ -1,4 +1,4 @@
-// @flow 
+// @flow
 
 interface CalculateWrapperHeightType {
   wrapperWidth: number;
@@ -29,56 +29,79 @@ interface CalculateSpaceAfterType {
 }
 
 const calculate = {
-  
-  wrapperHeight: ({ wrapperWidth, itemWidth, itemHeight, itemsCount }: CalculateWrapperHeightType) => {
+  wrapperHeight: ({
+    wrapperWidth,
+    itemWidth,
+    itemHeight,
+    itemsCount,
+  }: CalculateWrapperHeightType) => {
     const itemsInRow = calculate.itemsInRow({ wrapperWidth, itemWidth });
-    const rowsTotal = itemsCount && itemsInRow ? Math.ceil(itemsCount / itemsInRow) : 0;
+    const rowsTotal =
+      itemsCount && itemsInRow ? Math.ceil(itemsCount / itemsInRow) : 0;
     return rowsTotal * itemHeight;
   },
-  
-  itemsInRow: ({ wrapperWidth, itemWidth }:{wrapperWidth: number, itemWidth:number}) => {
+
+  itemsInRow: ({
+    wrapperWidth,
+    itemWidth,
+  }: {
+    wrapperWidth: number,
+    itemWidth: number,
+  }) => {
     return wrapperWidth && itemWidth ? Math.floor(wrapperWidth / itemWidth) : 0;
   },
-  
-  visibleItemIndices: ({ totalItems, itemsInRow, itemHeight, wrapperHeight, amountScrolled }: CalculateVisibleItemsType) => {
-    const first = Math.floor(amountScrolled / itemHeight) * itemsInRow + 1; 
-    let last =  Math.ceil((amountScrolled + wrapperHeight) / itemHeight) * itemsInRow;  
-    
+
+  visibleItemIndices: ({
+    totalItems,
+    itemsInRow,
+    itemHeight,
+    wrapperHeight,
+    amountScrolled,
+  }: CalculateVisibleItemsType) => {
+    const first = Math.floor(amountScrolled / itemHeight) * itemsInRow + 1;
+    let last =
+      Math.ceil((amountScrolled + wrapperHeight) / itemHeight) * itemsInRow;
+
     if (last > totalItems) {
       last = totalItems;
     }
-    
-    return { first, last }; 
+
+    return { first, last };
   },
-  
-  spaceBefore: ({ first, itemHeight, itemsInRow }: CalculateSpaceBeforeType) => {
-    const result =  itemHeight * (first - 1) / itemsInRow;
+
+  spaceBefore: ({
+    first,
+    itemHeight,
+    itemsInRow,
+  }: CalculateSpaceBeforeType) => {
+    const result = itemHeight * (first - 1) / itemsInRow;
     if (result && result > 0 && result !== Infinity) {
       return result;
     }
     return 0;
   },
-  
-  spaceAfter: ({ last, itemHeight, itemsInRow, containerHeight } : CalculateSpaceAfterType) => {
+
+  spaceAfter: ({
+    last,
+    itemHeight,
+    itemsInRow,
+    containerHeight,
+  }: CalculateSpaceAfterType) => {
     const result = containerHeight - last * itemHeight / itemsInRow;
     if (result === Infinity || isNaN(result) || result < itemHeight) {
       return 0;
     }
     return result;
   },
-  
 };
-
 
 const isMobile = (): boolean => {
   try {
     document.createEvent('TouchEvent');
-    return true;  
+    return true;
   } catch (error) {
-    return false; 
+    return false;
   }
 };
 
-export {
-    isMobile, calculate
-};
+export { isMobile, calculate };

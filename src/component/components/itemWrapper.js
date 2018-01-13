@@ -5,15 +5,19 @@ import * as React from 'react';
 import type { Element } from 'react';
 
 interface ItemPropsType {
-  child: Element<*>; 
+  child: Element<*>;
   itemsInRow: number;
   height: number;
 }
 
-const ItemWrapper = ({ height, itemsInRow,  child }: ItemPropsType): Element<*> => {
+const ItemWrapper = ({
+  height,
+  itemsInRow,
+  child,
+}: ItemPropsType): Element<*> => {
   const style = {
-    height, 
-    flexBasis: 100 / itemsInRow + '%', 
+    height,
+    flexBasis: 100 / itemsInRow + '%',
     flexGrow: 1,
   };
   return (
@@ -23,7 +27,4 @@ const ItemWrapper = ({ height, itemsInRow,  child }: ItemPropsType): Element<*> 
   );
 };
 
-
-export {
-  ItemWrapper, ItemWrapper as default,
-};
+export { ItemWrapper, ItemWrapper as default };

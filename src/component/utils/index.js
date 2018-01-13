@@ -1,5 +1,3 @@
-import { isMobile, calculate } from "./utils";
+import { isMobile, calculate } from './utils';
 
-export {
-    isMobile, calculate
-};
+export { isMobile, calculate };
