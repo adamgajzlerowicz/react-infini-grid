@@ -7,33 +7,51 @@ You can see how the grid looks here:
 
 Implemented tiles should have fixed size, which as total with margin and padding, will be specified in as Grid props.
 
+This plugin also knows how to re-render when:
+
+* window size changes
+* receives new props (new items)
+
 ### Install:
 
 ```
 yarn add react-infini-grid
 ```
 
-### Usage:
+### Working plug and play usage:
 
 ```
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Grid } from 'react-infini-grid';
+import Grid from 'react-infini-grid';
 
 const Item = ({ id }) => {
-    return (
-        <div>Item : {id + 1}</div>
-    )
+  return (
+    <div
+      style={{
+        backgroundColor: 'black',
+        margin: 5,
+        color: 'white',
+        minWidth: 90,
+        height: 90
+      }}
+    >
+      Item : {id + 1}
+    </div>
+  );
 };
 
-const items = [];
-for (let i = 0; i <= 1000; i++) {
-    items.push(<Item id={i}/>);
+const items = Array.from(Array(500)).map((_, i) => <Item id={i} key={i} />);
+
+class App extends Component {
+  render() {
+    return <Grid itemHeight={100} itemWidth={100} items={items} height={400} />;
+  }
 }
 
-render((
-    <Grid items={items} height={1000} itemHeight={250} itemWidth={250}/>
-), document.getElementById('app'));
+export default App;
+
+render(<App />, document.getElementById('root'));
 ```
 
 ### Api
