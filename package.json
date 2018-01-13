@@ -1,6 +1,6 @@
 {
   "name": "react-infini-grid",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "React base Grid component, adding to the DOM only elements that are in viewport",
   "private": false,
   "main": "index.js",
